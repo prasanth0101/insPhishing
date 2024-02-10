@@ -13,7 +13,7 @@ import com.example.demo.requestDto.UserRequest;
 import com.example.demo.service.UserService;
 
 @RestController
-@RequestMapping("/ins")
+@RequestMapping("/api")
 @CrossOrigin
 public class UserController {
 	
@@ -21,7 +21,7 @@ public class UserController {
 	@Autowired
 	private UserService service;
 	@CrossOrigin
-	@PostMapping("/post")
+	@PostMapping("/insert")
 	public ResponseEntity  insert(@RequestBody UserRequest user) {
 		service.put(user);
 		return new ResponseEntity<>(HttpStatus.OK);
